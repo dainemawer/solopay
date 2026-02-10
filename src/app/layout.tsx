@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const inter = Inter({
 	subsets: ["latin"],
+	variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const lora = Lora({
 	subsets: ["latin"],
+	variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
-	title: "SoloPay",
-	description: "SoloPay web app.",
+	title: "SoloPay - Bookkeeping for South African Freelancers",
+	description:
+		"Simple, affordable bookkeeping software built for South African freelancers and solopreneurs. Invoicing, expense tracking, VAT returns, and SARS compliance made easy.",
 };
 
 export default function RootLayout({
@@ -23,8 +24,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
+			<body className="font-sans antialiased">{children}</body>
 		</html>
 	);
 }
