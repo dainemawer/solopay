@@ -16,6 +16,14 @@ export const metadata: Metadata = {
 	title: "SoloPay - Bookkeeping for South African Freelancers",
 	description:
 		"Simple, affordable bookkeeping software built for South African freelancers and solopreneurs. Invoicing, expense tracking, VAT returns, and SARS compliance made easy.",
+	robots: {
+		index: process.env.ALLOW_INDEXING === "true",
+		follow: process.env.ALLOW_INDEXING === "true",
+		googleBot: {
+			index: process.env.ALLOW_INDEXING === "true",
+			follow: process.env.ALLOW_INDEXING === "true",
+		},
+	},
 };
 
 export default function RootLayout({
