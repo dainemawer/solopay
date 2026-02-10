@@ -1,10 +1,24 @@
 import Link from "next/link";
 
 const links = {
-	Product: ["Features", "Pricing", "Integrations", "Changelog"],
-	Company: ["About", "Blog", "Careers", "Contact"],
-	Resources: ["Help Centre", "API Docs", "Community", "Status"],
-	Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+	Product: [
+		{ label: "Features", href: "/#features" },
+		{ label: "Pricing", href: "/#pricing" },
+	],
+	Company: [
+		{ label: "About", href: "#" },
+		{ label: "Blog", href: "#" },
+		{ label: "Contact", href: "#" },
+	],
+	Resources: [
+		{ label: "Community", href: "#" },
+		{ label: "Status", href: "/status" },
+	],
+	Legal: [
+		{ label: "Privacy Policy", href: "/privacy-policy" },
+		{ label: "Terms of Service", href: "/terms-of-service" },
+		{ label: "Cookie Policy", href: "/cookie-policy" },
+	],
 };
 
 export function Footer() {
@@ -31,12 +45,12 @@ export function Footer() {
 							</h4>
 							<ul className="mt-4 space-y-2.5">
 								{items.map((item) => (
-									<li key={item}>
+									<li key={item.label}>
 										<Link
-											href="#"
+											href={item.href}
 											className="text-sm text-muted-foreground transition-colors hover:text-foreground"
 										>
-											{item}
+											{item.label}
 										</Link>
 									</li>
 								))}
